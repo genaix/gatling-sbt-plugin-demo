@@ -1,0 +1,10 @@
+{
+  "simulation": "webtours.WebtoursSimulation",
+  "simulationId": "webtourssimulation-20220925184004760",
+  "start": 1664131205282,
+  "description": "",
+  "scenarios": ["my scenario otus"],
+  "assertions": [
+
+  ]
+}

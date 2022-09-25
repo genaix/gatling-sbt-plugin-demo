@@ -2,19 +2,14 @@ package webtours
 
 import io.gatling.core.Predef._
 
+import scala.concurrent.duration.DurationInt
+
 class WebtoursSimulation extends Simulation {
 	setUp(WebtoursScenario.apply()
 		.inject(
-			constantUsersPerSec(0.4).during(120),
-			constantUsersPerSec(0.8).during(120),
-			constantUsersPerSec(1.2).during(120),
-			constantUsersPerSec(1.6).during(120),
-			constantUsersPerSec(2.0).during(120),
-			constantUsersPerSec(2.4).during(120),
-			constantUsersPerSec(2.8).during(120),
-			constantUsersPerSec(3.2).during(120),
-			constantUsersPerSec(3.6).during(120),
-			constantUsersPerSec(4.0).during(120),
+			rampUsersPerSec(0.1).to(2.8).during(2.minutes),
+			constantUsersPerSec(2.8).during(1.hours),
+			rampUsersPerSec(2.8).to(0.0).during(2.minutes),
 		)
 	).protocols(httpProtocol)
 }
