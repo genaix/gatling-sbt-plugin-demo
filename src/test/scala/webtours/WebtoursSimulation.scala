@@ -5,11 +5,16 @@ import io.gatling.core.Predef._
 class WebtoursSimulation extends Simulation {
 	setUp(WebtoursScenario.apply()
 		.inject(
-			incrementUsersPerSec(1.5)
-				.times(10)
-				.eachLevelLasting(60)
-				.separatedByRampsLasting(1)
-				.startingFrom(1.5) // Double
+			constantUsersPerSec(0.4).during(120),
+			constantUsersPerSec(0.8).during(120),
+			constantUsersPerSec(1.2).during(120),
+			constantUsersPerSec(1.6).during(120),
+			constantUsersPerSec(2.0).during(120),
+			constantUsersPerSec(2.4).during(120),
+			constantUsersPerSec(2.8).during(120),
+			constantUsersPerSec(3.2).during(120),
+			constantUsersPerSec(3.6).during(120),
+			constantUsersPerSec(4.0).during(120),
 		)
 	).protocols(httpProtocol)
 }
