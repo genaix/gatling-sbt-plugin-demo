@@ -15,3 +15,8 @@ It includes:
   demonstrating sufficient Gatling functionality
 * proper source file layout
   * both the `test` and `it` (integration test) configurations are shown
+
+
+## Run
+- `"Gatling/testOnly perf.Debug"` source_path `src/test/scala`
+- `"GatlingIt/testOnly computerdatabase.BasicItSimulation"` source_path `src/it/scala`
